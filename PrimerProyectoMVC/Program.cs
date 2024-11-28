@@ -1,11 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using PrimerProyectoMVC.Datos;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//Configuramos la conexion a sql localhost
+builder.Services.AddDbContext<ApplicationDbContext>(opciones => 
+            opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
-//Conexion 
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

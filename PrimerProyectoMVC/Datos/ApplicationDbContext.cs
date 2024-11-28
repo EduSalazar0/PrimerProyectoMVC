@@ -7,7 +7,6 @@ namespace PrimerProyectoMVC.Datos
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) 
         { 
-
         }
 
         //Agregar los modelos aqui
